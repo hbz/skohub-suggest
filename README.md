@@ -34,7 +34,6 @@ $ annif loadvoc hfs-de hochschulfaechersystematik.ttl
 5. Train and test:
 ```
 $ annif train hfs-de hfs-train.tsv
-$ annif suggest
 $ echo "Was ist Statistik?" | annif suggest hfs-de
 <https://w3id.org/kim/hochschulfaechersystematik/n237>  Mathematische Statistik/Wahrscheinlichkeitsrechnung     0.47248679399490356
 <https://w3id.org/kim/hochschulfaechersystematik/n020>  Bergbau/Bergtechnik     0.03955048695206642
@@ -51,8 +50,7 @@ $ echo "Was ist Statistik?" | annif suggest hfs-de
 6. Start API:
 ```
 $ annif run --host 0.0.0.0
-$ curl -X POST --header 'Content-Type: application/x-www-form-urlencoded' --header 'Accept: application/json' -d 'text=Was ist Statistik?&limit=1' 'http://127.0.0.1:5000/v1/projects
-suggest'
+$ curl -X POST --header 'Content-Type: application/x-www-form-urlencoded' --header 'Accept: application/json' -d 'text=Was ist Statistik?&limit=1' 'http://127.0.0.1:5000/v1/projects/hfs-de/suggest'
 {       
   "results": [
     {
